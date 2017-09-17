@@ -59,11 +59,7 @@ public class IO{
 			string_split.split();
 			string_split.make_gragh();
 			creat_png.print_out("graph.dot", "graph.png");
-			System.out.println(bridge.queryBridgeWords("out","worlds"));
-			System.out.println(bridge.generateNewText("Seek to explore new and exciting synergies"));
-			System.out.println(bridge.calcShortestPath("To", "and"));
-			System.out.println(bridge.calcShortestPath("To"));
-			System.out.println(bridge.randomWalk());
+			
 		}
 		catch (IOException e){
 			System.out.println("I/O error occurred");

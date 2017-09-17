@@ -43,7 +43,7 @@ public class creat_png extends string_split{
 			String path = directory.getCanonicalPath();
 			
 			Runtime run = Runtime.getRuntime();
-			run.exec("D:\\Graphviz2.38\\bin\\dot -Tpng " + path + "\\" + str + " -o " + str_pic);
+			run.exec("F:\\Program Files (x86)\\Graphviz2.38\\bin\\dot -Tpng " + path + "\\" + str + " -o " + str_pic);
 			
 			
 		}

@@ -59,8 +59,8 @@ public class IO{
 			string_split.split();
 			string_split.make_gragh();
 			creat_png.print_out("graph.dot", "graph.png");
-			System.out.println(bridge.queryBridgeWords("out","worlds"));
-			System.out.println(bridge.generateNewText("Seek to explore new and exciting synergies"));
+			System.out.println(bridge.queryBridgeWords("of","people"));
+			System.out.println(bridge.generateNewText(" who struggled here have consecrated far above our power add or detract"));
 			System.out.println(bridge.calcShortestPath("To", "and"));
 			System.out.println(bridge.calcShortestPath("To"));
 			System.out.println(bridge.randomWalk());

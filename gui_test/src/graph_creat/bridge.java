@@ -63,7 +63,6 @@ public class bridge extends string_split{
 			if(t1 == -1 | t2 == -1){	//不存在单词继续循环
 				tempstr += usertxt[j];
 				tempstr += " ";
-			//	j++;
 			}
 			else{
 				for(int i = 0; i< word_num; i++){
@@ -75,7 +74,6 @@ public class bridge extends string_split{
 				if(brinum == 0){
 					tempstr += usertxt[j];
 					tempstr += " ";
-				//	j++;//不存在桥接词继续循环
 				}
 				else{
 					Random random = new Random();
@@ -83,12 +81,10 @@ public class bridge extends string_split{
 					tempstr += " ";
 					tempstr += word_list[bri[random.nextInt(brinum)]];
 					tempstr += " ";
-			//		j++;
 				}
 		}
 	}
 		tempstr += usertxt[usertxt.length-1];
-		//System.out.println(tempstr);
 		return tempstr;
 	}
 	public static String calcShortestPath(String word1, String word2){
@@ -126,7 +122,6 @@ public class bridge extends string_split{
 				  k = Path[t1][k];
 				while ( k != -1 )
                {
-                 
                    sk.push(word_list[k]);
                    k = Path[t1][k];
                }
@@ -184,8 +179,6 @@ public class bridge extends string_split{
 		int edge_num = 0;	//存储边数
 		int[] edge = new int [word_num];	//存储边
 		int[][] B = A.clone();
-	//	Stack<String> sk = new Stack<String>();
-		//sk.push(word_list[t1]);
 		tmpstr = tmpstr + word_list[t1] + " ";
 		int tmpedge;
 		while(true)
@@ -203,9 +196,7 @@ public class bridge extends string_split{
 				tmpedge = edge[random.nextInt(edge_num)];
 				B[t1][tmpedge] = max ;
 				t1 = tmpedge;
-				//sk.push(word_list[t1]);
-				tmpstr = tmpstr + word_list[t1] + " ";
-				
+				tmpstr = tmpstr + word_list[t1] + " ";		
 			}
 		}
 		return tmpstr;

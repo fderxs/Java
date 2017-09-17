@@ -1,9 +1,10 @@
 package graph_creat;
 
 public class string_split extends IO{
-	public static String[] word_list = new String[50];
+	private static int max_num = 400;
+	public static String[] word_list = new String[max_num];
 	public static String[] IOtext = IO.str.split(" ");
-	public static int[][] w = new int[50][50];
+	public static int[][] w = new int[max_num][max_num];
 	public static int word_num;
 	
 	public static void split(){

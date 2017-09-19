@@ -5,16 +5,20 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import gui.message_dialog;
+
 public class creat_png extends string_split{
 	
-	public static void print_out(String str, String str_pic){
+	public creat_png() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public void print_out(String str, String str_pic){
 		try{
 			File file_out = new File(str);
 			if (!file_out.exists()){
 				file_out.createNewFile();
-			}
-			else{
-				System.out.println("A file/directory with name " + str + " exists!");
 			}
 			
 			FileWriter fw = new FileWriter(file_out);
@@ -43,12 +47,12 @@ public class creat_png extends string_split{
 			String path = directory.getCanonicalPath();
 			
 			Runtime run = Runtime.getRuntime();
-			run.exec("D:\\Graphviz2.38\\bin\\dot -Tpng " + path + "\\" + str + " -o " + str_pic);
+			run.exec("dot -Tpng " + path + "\\" + str + " -o " + str_pic);
 			
 			
 		}
 		catch (IOException e){
-			System.out.println("I/O error occurred");
+			new message_dialog("I/O error occurred", "timg_error", "Error", message_dialog.CONFIRM, null);
 		}
 	}
 }

@@ -1,0 +1,4 @@
+graph.dot 为程序生成的供graphviz插件读取的文件
+graph.png 为graphviz生成的英文单词图
+test.txt 为未处理过的文本
+output.txt 为已经处理过的文本

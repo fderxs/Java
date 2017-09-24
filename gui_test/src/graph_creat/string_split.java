@@ -1,13 +1,15 @@
 package graph_creat;
 
 public class string_split{
-	public final static int MAXN = 1000;
+	public final static int MAXN = 100;
 	public String str = "";
 	public String initialText = "";
-	public static String[] word_list = new String[MAXN];
+	public String[] word_list = new String[MAXN];
 	public String[] IOtext;
 	public int[][] w = new int[MAXN][MAXN];
-	public static int word_num;
+	public int word_num;
+	public int[][] A = new int[MAXN][MAXN]; 
+	public int[][] Path = new int[MAXN][MAXN];
 	
 	public string_split() {
 		// TODO Auto-generated constructor stub

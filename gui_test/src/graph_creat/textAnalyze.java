@@ -7,7 +7,9 @@ import java.io.IOException;
 
 import gui.message_dialog;
 
-public class textAnalyze extends creat_png{
+public class textAnalyze extends bridge{
+	public boolean CORRECT = true;
+	
 	public textAnalyze(String name){
 		try{
 			File file_in = new File(name);
@@ -17,7 +19,9 @@ public class textAnalyze extends creat_png{
 			
 			boolean is_space = true;
 			int type;
+			int total = 0;
 			while ((type = inStream.read()) != -1){
+				if (++total >= MAXN) CORRECT = false;
 				char chr = (char) type;
 				initialText = initialText + chr;
 				if (chr >= 'a' && chr <='z' || chr >= 'A' && chr <='Z'){
@@ -33,14 +37,16 @@ public class textAnalyze extends creat_png{
 				}
 			}
 			inStream.close();
-			IOtext =  str.split(" ");
-			split();
-			make_gragh();
-			print_out("graph.dot", "graph.png");
+			if (CORRECT){
+				IOtext =  str.split(" ");
+				split();
+				make_gragh();
+				print_out("graph.dot", "graph.png");
+			}
 		}
 		catch (IOException e){
-			new message_dialog("I/O error occurred", "timg_error", "Error", message_dialog.CONFIRM, null);
+			message_dialog message = new message_dialog();
+			message.showdialog("I/O error occurred", "error", "Error", message_dialog.CONFIRM);
 		}
-		
 	}
 }

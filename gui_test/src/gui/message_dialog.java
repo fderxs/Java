@@ -13,10 +13,15 @@ public class message_dialog extends JFrame{
 	Dimension screensize = kit.getScreenSize();
 	public static final int CONFIRM_CANCEL = 0;
 	public static final int CONFIRM = 1;
+	public static final int Confirm = 2;
+	public static final int Cancel = 3;
 	int screenWidth = screensize.width;
 	int screenHeight = screensize.height;
+	public static int command;
 	
-	public message_dialog(String text, String image, String title, int style, ActionListener listener){
+	public void showdialog(String text, String image, String title, int style){
+		JOptionPane jp = new JOptionPane();
+		
 		setTitle(title);
 		setSize(screenWidth / 6, screenHeight / 6);
 		setLocation(screenWidth / 12 * 5, screenHeight / 12 * 5);
@@ -43,23 +48,29 @@ public class message_dialog extends JFrame{
 			button.setFont(new Font("SanSerif", Font.BOLD, 30));
 			button.addActionListener(event -> {
 				 dispose();
+				 command = this.Confirm;
 			});
 			buttonPanel.add(button);
 		}
 		else if (style == CONFIRM_CANCEL){
 			JButton buttonCancel = new JButton("取消");
 			buttonCancel.setFont(new Font("SanSerif", Font.BOLD, 30));
+			buttonPanel.add(buttonCancel);
 			buttonCancel.addActionListener(event -> {
 				 dispose();
+				 command = this.Cancel;
 			});
-			buttonPanel.add(buttonCancel);
 			
 			JButton buttonConfirm = new JButton("确定");
 			buttonConfirm.setFont(new Font("SanSerif", Font.BOLD, 30));
-			buttonConfirm.addActionListener(listener);
 			buttonPanel.add(buttonConfirm);
+			buttonConfirm.addActionListener(event -> {
+				dispose();
+				command = this.Confirm;
+			});
+			
 		}
-		
 		add(buttonPanel, BorderLayout.SOUTH);
+		
 	}
 }

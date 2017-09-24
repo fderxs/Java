@@ -52,7 +52,8 @@ public class creat_png extends string_split{
 			
 		}
 		catch (IOException e){
-			new message_dialog("I/O error occurred", "timg_error", "Error", message_dialog.CONFIRM, null);
+			message_dialog message = new message_dialog();
+			message.showdialog("I/O error occurred", "error", "Error", message_dialog.CONFIRM);
 		}
 	}
 }
